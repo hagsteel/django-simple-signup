@@ -15,6 +15,7 @@ Therefore, I copied it and added a few views around this.
 *  add ```simple_signup``` to ```INSTALLED_APPS```
 *  set ```AUTH_USER_MODEL``` in settings (if you have one, else it will use Django default user)
 *  add ```url(r'^accounts/', include('simple_signup.urls')),``` to your urls.py
+*  add ```SIGNUP_COMPLETE_URL``` to settings (this is where new users will be redirected)
 
 
 # Additional notes

@@ -1,7 +1,6 @@
-from django.contrib.auth import logout, login, authenticate
-from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
-from django.views.generic import CreateView, View
+from django.contrib.auth import login, authenticate
+from django.conf import settings
+from django.views.generic import CreateView
 from .forms import UserCreationForm
 from django.contrib.auth import get_user_model
 
@@ -18,4 +17,4 @@ class SignUp(CreateView):
         return resp
 
     def get_success_url(self):
-        return reverse('create_project')
+        return getattr(settings, 'SIGNUP_COMPLETE_URL', '/')
