@@ -27,7 +27,6 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = get_user_model()
-        import ipdb;ipdb.set_trace()
         fields = ("username",)
 
     def clean_username(self):
