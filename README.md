@@ -3,6 +3,11 @@ django-simple-signup
 
 Simple django signup
 
+# Description
+This is using the user creation form from Django, however the native form doesn't allow you to set the user model.
+Therefore, I copied it and added a few views around this.
+
+
 # Setup steps
 
 *  pip install -e git://github.com/jonashagstedt/django-simple-signup.git#egg=simple-signup
