@@ -16,12 +16,8 @@ setup(
     url = "https://github.com/jonashagstedt/django-simple-signup",
     packages=['simple_signup', ],
     long_description=read('README.md'),
-    dependency_links=[
-        "git://github.com/jonashagstedt/django-form-mangler.git#egg=form_mangler"
-    ],
     install_requires=[
-        "Django >= 1.5",
-        "form_mangler"
+        "Django >= 1.5"
     ],
     classifiers=[
         "Development Status :: Beta",

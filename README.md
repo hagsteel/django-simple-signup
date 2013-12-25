@@ -11,6 +11,7 @@ Therefore, I copied it and added a few views around this.
 # Setup steps
 
 *  pip install -e git://github.com/jonashagstedt/django-simple-signup.git#egg=simple-signup
+*  (if you don't use your own template) pip install -e git://github.com/jonashagstedt/django-form-mangler.git#egg=form_mangler
 *  add ```simple_signup``` to ```INSTALLED_APPS```
 *  set ```AUTH_USER_MODEL``` in settings (if you have one, else it will use Django default user)
 *  add ```url(r'^accounts/', include('simple_signup.urls')),``` to your urls.py
