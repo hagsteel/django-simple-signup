@@ -1,9 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-User form
-</body>
-</html>
+{% extends 'base.html' %}
+{% load mangler %}
+
+{% block main_content %}
+    <form action="." method="post">
+        {% csrf_token %}
+        <div class="form-group {% if form.username.errors %}has-error{% endif %}">
+            {% mangle_widget form.username placeholder="Username" class="form-control" autocapitalize="off" autocorrect="off" autofocus="" %}
+            {{ form.username.errors }}
+        </div>
+
+        <div class="form-group {% if form.password1.errors %}has-error{% endif %}">
+            {% mangle_widget form.password1 placeholder="password" class="form-control" %}
+            {{ form.password1.errors }}
+        </div>
+
+        <div class="form-group {% if form.password2.errors %}has-error{% endif %}">
+            {% mangle_widget form.password2 placeholder="confirm password" class="form-control" %}
+            {{ form.password2.errors }}
+        </div>
+
+        <div class="form-group ">
+            <button type="submit" class="btn btn-primary">Signup</button>
+        </div>
+
+    </form>
+{% endblock main_content %}
+
