@@ -3,7 +3,7 @@ from django.utils.translation import ugettext, ugettext_lazy as _
 from django.contrib.auth import get_user_model
 
 
-class  UserCreationForm(forms.ModelForm):
+class UserCreationForm(forms.ModelForm):
     """
     A form that creates a user, with no privileges, from the given username and
     password.
@@ -27,6 +27,7 @@ class  UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = get_user_model()
+        import ipdb;ipdb.set_trace()
         fields = ("username",)
 
     def clean_username(self):
@@ -34,8 +35,8 @@ class  UserCreationForm(forms.ModelForm):
         # but it sets a nicer error message than the ORM. See #13147.
         username = self.cleaned_data["username"]
         try:
-            self.model._default_manager.get(username=username)
-        except self.model.DoesNotExist:
+            get_user_model()._default_manager.get(username=username)
+        except get_user_model().DoesNotExist:
             return username
         raise forms.ValidationError(
             self.error_messages['duplicate_username'],
